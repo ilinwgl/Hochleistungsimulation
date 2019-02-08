@@ -1,0 +1,150 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x000000001a6a00b8, pid=4224, tid=0x0000000000002148
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_191-b12) (build 1.8.0_191-b12)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.191-b12 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  0x000000001a6a00b8
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000302e000):  JavaThread "main" [_thread_in_native, id=8520, stack(0x0000000003030000,0x0000000003130000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x000000001be1c7d0
+
+Registers:
+RAX=0x00000000000015f4, RBX=0x000000001c022b50, RCX=0x000000001be17000, RDX=0x000000000312e4f8
+RSP=0x000000000312e3e0, RBP=0x0000000000000064, RSI=0x0000000000000000, RDI=0x000000001c022c60
+R8 =0x000000000312e4e0, R9 =0x000000001c855640, R10=0x000000000312e4f8, R11=0x000000000312e4e0
+R12=0x000000000000000a, R13=0x00000000000015f4, R14=0x0000000000089350, R15=0x0000000000000064
+RIP=0x000000001a6a00b8, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x000000000312e3e0)
+0x000000000312e3e0:   000000001a8c98a0 00007ffaf6018717
+0x000000000312e3f0:   000000001c022b50 0000000000000000
+0x000000000312e400:   0000000000000000 000000001be0d000
+0x000000000312e410:   000000001bdef000 000000001be17000
+0x000000000312e420:   000000000312e4e0 000000611a8c7fc0
+0x000000000312e430:   0000000000000000 000000001c022b50
+0x000000000312e440:   000000000312e6a0 0000000000000233
+0x000000000312e450:   00000000014b54f0 00007ffb0ba50a08
+0x000000000312e460:   000000000312e808 000000001a8af960
+0x000000000312e470:   00007ffb0ba509e8 00007ffac6b4d77b
+0x000000000312e480:   ffffffffffffff80 00007ffaf601a82e
+0x000000000312e490:   000000000312e480 000000001a516f28
+0x000000000312e4a0:   0000000000000000 fffffffffffffffe
+0x000000000312e4b0:   000000001a8c2e40 00007ffaf9415810
+0x000000000312e4c0:   00007ffb0ba50a08 0000000000000000
+0x000000000312e4d0:   0000000000000000 00007ffaed89d07f 
+
+Instructions: (pc=0x000000001a6a00b8)
+0x000000001a6a0098:   00 c5 fa 11 01 48 83 c2 04 48 83 c0 04 83 c3 ff
+0x000000001a6a00a8:   75 e6 eb 11 0f 1f 40 00 49 63 c5 48 8b 4c 24 38
+0x000000001a6a00b8:   c5 fa 10 04 81 c5 fa 5a c0 c7 44 24 4c 61 00 00
+0x000000001a6a00c8:   00 c5 fb 11 44 24 50 48 b9 00 00 6b 1a 00 00 00 
+
+
+Register to memory mapping:
+
+RAX=0x00000000000015f4 is an unknown value
+RBX=0x000000001c022b50 is an unknown value
+RCX=0x000000001be17000 is an unknown value
+RDX=0x000000000312e4f8 is pointing into the stack for thread: 0x000000000302e000
+RSP=0x000000000312e3e0 is pointing into the stack for thread: 0x000000000302e000
+RBP=0x0000000000000064 is an unknown value
+RSI=0x0000000000000000 is an unknown value
+RDI=0x000000001c022c60 is an unknown value
+R8 =0x000000000312e4e0 is pointing into the stack for thread: 0x000000000302e000
+R9 =0x000000001c855640 is an unknown value
+R10=0x000000000312e4f8 is pointing into the stack for thread: 0x000000000302e000
+R11=0x000000000312e4e0 is pointing into the stack for thread: 0x000000000302e000
+R12=0x000000000000000a is an unknown value
+R13=0x00000000000015f4 is an unknown value
+R14=0x0000000000089350 is an unknown value
+R15=0x0000000000000064 is an unknown value
+
+
+Stack: [0x0000000003030000,0x0000000003130000],  sp=0x000000000312e3e0,  free space=1016k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x000000001a6a00b8
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.jocl.CL.clWaitForEventsNative(I[Lorg/jocl/cl_event;)I+0
+j  org.jocl.CL.clWaitForEvents(I[Lorg/jocl/cl_event;)I+2
+j  MatrixVektorMultiplicationPar.main([Ljava/lang/String;)V+605
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000017e7b800 JavaThread "Service Thread" daemon [_thread_blocked, id=14644, stack(0x0000000019ba0000,0x0000000019ca0000)]
+  0x0000000017e32800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=13192, stack(0x00000000196a0000,0x00000000197a0000)]
+  0x0000000017e2f800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=13768, stack(0x00000000195a0000,0x00000000196a0000)]
+  0x0000000017e1f800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=9960, stack(0x00000000194a0000,0x00000000195a0000)]
+  0x0000000017e1b000 JavaThread "Attach Listener" daemon [_thread_blocked, id=13000, stack(0x00000000193a0000,0x00000000194a0000)]
+  0x0000000017e1a000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1220, stack(0x00000000192a0000,0x00000000193a0000)]
+  0x0000000017e0a800 JavaThread "Finalizer" daemon [_thread_blocked, id=13704, stack(0x0000000019080000,0x0000000019180000)]
+  0x0000000003320800 JavaThread "Reference Handler" daemon [_thread_blocked, id=11056, stack(0x0000000018f80000,0x0000000019080000)]
+=>0x000000000302e000 JavaThread "main" [_thread_in_native, id=8520, stack(0x0000000003030000,0x0000000003130000)]
+
+Other Threads:
+  0x0000000017de8000 VMThread [stack: 0x0000000018e80000,0x0000000018f80000] [id=11312]
+  0x0000000017e7c800 WatcherThread [stack: 0x0000000019e10000,0x0000000019f10000] [id=1128]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 37888K, used 2107K [0x00000000d6000000, 0x00000000d8a00000, 0x0000000100000000)
+  eden space 32768K, 6% used [0x00000000d6000000,0x00000000d620ee98,0x00000000d8000000)
+  from space 5120K, 0% used [0x00000000d8500000,0x00000000d8500000,0x00000000d8a00000)
+  to   space 5120K, 0% used [0x00000000d8000000,0x00000000d8000000,0x00000000d8500000)
+ ParOldGen       total 86016K, used 0K [0x0000000082000000, 0x0000000087400000, 0x00000000d6000000)
+  object space 86016K, 0% used [0x0000000082000000,0x0000000082000000,0x0000000087400000)
+ Metaspace       used 3289K, capacity 4728K, committed 4864K, reserved 1056768K
+  class space    used 371K, capacity 424K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x00000000126f0000,0x0000000012af0000] byte_map_base: 0x00000000122e0000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000053c63e30
+ Begin Bits: [0x0000000013190000, 0x0000000015110000)
+ End Bits:   [0x0000000015110000, 0x0000000017090000)
+
+Polling page: 0x0000000001410000
+
+CodeCache: size=245760Kb used=1209Kb max_used=1209Kb free=244551Kb
+ bounds [0x0000000003330000, 0x00000000035a0000, 0x0000000012330000]
+ total_blobs=342 nmethods=71 adapters=184
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.186 Thread 0x0000000017e32800   67       3       java.lang.ClassLoader::checkName (43 bytes)
+Event: 0.187 Thread 0x0000000017e32800 nmethod 67 0x000000000345cf50 code [0x000000000345d100, 0x000000000345d878]
+Event: 0.187 Thread 0x0000000017e32800   68       3       sun.misc.VM::allowArraySyntax (4 bytes)
+Event: 0.187 Thread 0x0000000017e32800 nmethod 68 0x000000000345db10 code [0x000000000345dc60, 0x000000000345ddb0]
+Event: 0.187 Thread 0x0000000017e32800   69       3       java.util.BitSet::wordIndex (5 bytes)
+Event: 0.187 Thread 0x0000000017e32800 nmethod 69 0x000000000345de10 code [0x000000000345df60, 0x000000000345e090]
+Event: 0.584 Thread 0x0000000017e32800   70       1       java.util.logging.LogManager$LoggerContext::getOwner (5 bytes)
+Event: 0.584 Thread 0x0000000017e32800 nmethod 70 0x000000000345e110 code [0x000000000345e260, 0x000000000345e370]
+Event: 0.584 Thread 0x0000000017e32800   71       1       java.lang.ref.Reference::get (5 bytes)
+Event: 0.584 Thread 0x0000000017e32800 nmethod 71 0x000000000345e3d0 code [0x000000000345e520, 0x000000000345e630]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
