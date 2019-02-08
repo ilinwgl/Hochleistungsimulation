@@ -1,0 +1,39 @@
+# Nombre de domaine(s)
+2
+#
+# Kxx et Kyy
+1 1
+#
+# Kxx et Kyy
+1 1
+#
+# Nombre de conditions aux limites différentes
+2
+#
+# Nombre d'éléments-frontières et type  de chaque "conditions aux limites"
+8.  1.
+8.  2.
+# Nombre d'éléments-frontières et type de chaque "conditions aux limites"
+#
+# Numéro global des éléments frontières de type 1 et valeur correspondante...
+9  1
+10  .1
+11  .5
+12  .5
+13  0
+14  0
+15  0
+16  0
+#
+# Numéro global des éléments frontières de type 2 et valeur correspondante...
+1  -.25
+2  -.25
+3  -.75
+4  -.75
+5  .25
+6  .25
+7  .75
+8  .75
+# Fonction F(x,y)
+# a0 + a1*X + a2*Y +  a3*X² + a4*Y² + a5*XY + a6*cos(X) + a7*cos(Y) + a8*sin(X) + a9*sin(Y) + a10*exp(X) + a11*exp(Y)
+0
