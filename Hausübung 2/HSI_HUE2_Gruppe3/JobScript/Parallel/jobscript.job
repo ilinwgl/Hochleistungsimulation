@@ -1,0 +1,27 @@
+#!/bin/bash
+#SBATCH -J Parallel.kurs00026
+#SBATCH -A kurs00026
+#SBATCH -p kurs00026
+#SBATCH --reservation=kurs00026
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=guanlin.wang@stud.tu-darmstadt.de
+#SBATCH -e /home/kurse/kurs00026/gw98dahy/logs/Parallel.err.%j
+#SBATCH -o /home/kurse/kurs00026/gw98dahy/logs/Parallel.out.%j
+#SBATCH --mem-per-cpu=1000
+#SBATCH -t 00:30:00
+#SBATCH -n 16
+
+# first remove all modules and load required modules
+module purge
+module load intel/2018
+module load java
+
+# set MPJ_HOME
+export MPJ_HOME=/home/kurse/kurs00026/_shared/libs/mpj-v0_44
+export PATH=$MPJ_HOME/bin:$PATH
+
+# call program
+javac -cp .:$MPJ_HOME/lib/mpj.jar Parallel.java
+srun java -cp .:$MPJ_HOME/lib/mpj.jar -Djava.library.path=$MPJ_HOME/lib Parallel 0 0 native
+
+

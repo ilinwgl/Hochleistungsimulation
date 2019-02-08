@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH -J Sequentiell.kurs00026
+#SBATCH -A kurs00026
+#SBATCH -p kurs00026
+#SBATCH --reservation=kurs00026
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=guanlin.wang@stud.tu-darmstadt.de
+#SBATCH -e /home/kurse/kurs00026/gw98dahy/logs/Sequentiell.err.%j
+#SBATCH -o /home/kurse/kurs00026/gw98dahy/logs/Sequentiell.out.%j
+#SBATCH --mem-per-cpu=1000
+#SBATCH -t 00:30:00
+#SBATCH -n 1
+
+# first remove all modules and load required modules
+module purge
+module load java
+
+# call program
+javac Sequentiell.java
+srun java Sequentiell 
